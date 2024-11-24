@@ -1,0 +1,48 @@
+<main>
+  <h1>The Christmas Rumble: Vote and See the Rankings!</h1>
+  
+  <!-- Toy Rumble Arena -->
+  <div class="arena">
+    <!-- Toy A -->
+    <div class="toy" id="toyA">
+      <img src="toyA.jpg" alt="Toy A">
+      <h2>Robo-Bot 3000</h2>
+      <p>STEM Robot with coding features</p>
+      <button onclick="vote('Robo-Bot 3000')">Vote for Robo-Bot!</button>
+    </div>
+
+    <!-- VS Divider -->
+    <div class="vs">
+      <h2>VS</h2>
+    </div>
+
+    <!-- Toy B -->
+    <div class="toy" id="toyB">
+      <img src="toyB.jpg" alt="Toy B">
+      <h2>Fluffy the Unicorn</h2>
+      <p>Plushie that sings and lights up</p>
+      <button onclick="vote('Fluffy the Unicorn')">Vote for Fluffy!</button>
+    </div>
+  </div>
+
+  <!-- Live Stats -->
+  <div class="stats">
+    <h2>Live Voting Stats</h2>
+    <div class="stat-bar">
+      <div class="stat" id="toyAStat">Robo-Bot: 65%</div>
+      <div class="stat" id="toyBStat">Fluffy: 35%</div>
+    </div>
+  </div>
+
+  <!-- Leaderboard Section -->
+  <section class="leaderboard">
+    <h2>Current Rankings</h2>
+    <ol id="ranking-list">
+      <li>Robo-Bot 3000 - 350 votes</li>
+      <li>Fluffy the Unicorn - 275 votes</li>
+      <li>Adventure Drone - 200 votes</li>
+      <li>Creative Art Kit - 180 votes</li>
+      <li>Dino Racer - 150 votes</li>
+    </ol>
+  </section>
+</main>

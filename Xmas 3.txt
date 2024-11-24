@@ -1,0 +1,46 @@
+// Sample vote counts
+let votes = {
+  "Robo-Bot 3000": 350,
+  "Fluffy the Unicorn": 275
+};
+
+// Function to handle voting
+function vote(toyName) {
+  // Increment vote count
+  votes[toyName]++;
+  alert(`Thanks for voting for ${toyName}!`);
+
+  // Update stats
+  updateStats();
+  updateLeaderboard();
+}
+
+// Function to update live stats
+function updateStats() {
+  const totalVotes = votes["Robo-Bot 3000"] + votes["Fluffy the Unicorn"];
+  const roboBotPercentage = ((votes["Robo-Bot 3000"] / totalVotes) * 100).toFixed(1);
+  const fluffyPercentage = ((votes["Fluffy the Unicorn"] / totalVotes) * 100).toFixed(1);
+
+  document.getElementById("toyAStat").textContent = `Robo-Bot: ${roboBotPercentage}%`;
+  document.getElementById("toyBStat").textContent = `Fluffy: ${fluffyPercentage}%`;
+}
+
+// Function to update leaderboard
+function updateLeaderboard() {
+  const rankingList = document.getElementById("ranking-list");
+  const sortedToys = Object.entries(votes).sort((a, b) => b[1] - a[1]);
+
+  // Clear existing leaderboard
+  rankingList.innerHTML = "";
+
+  // Populate with updated rankings
+  sortedToys.forEach(([toy, count]) => {
+    const listItem = document.createElement("li");
+    listItem.textContent = `${toy} - ${count} votes`;
+    rankingList.appendChild(listItem);
+  });
+}
+
+// Initialize stats on page load
+updateStats();
+updateLeaderboard();
